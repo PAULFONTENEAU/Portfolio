@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Paul Fonteneau" description="About Paul Fonteneau Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="A young Villeboisian, pround of where he come. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/villebois.png"
+					alt="Paul Fonteneau at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content"> 
+					<p>
+						Born in Villebois-Lavalette, I am a young Charentais, proud of its values and traditions. Despite this, I am passionate about travel because it allows personal growth and reflection, which is why I am currently taking a gap year in Australia. With a significant part of my family working in construction, it became an obvious choice for me. Additionally, being passionate about new technologies, I naturally gravitated towards BIM. Lastly, I have been playing football since a young age; it serves as an outlet, helping me stay physically and mentally strong while cultivating a sense of teamwork.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>After two years university in civil engineering, where i acquire foundational skills in the fundamentals of building and public works, along with expertise in structural analysis, construction project management, surveying, and environmental engineering.I decided to continue in a civil engineering bachelor with a BIM specialisation, During this year i learn how to use differents software, but i also learn and understand what is the BIM for real and it's absolutely passionate, contact me if you want more explanation !.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>About my hardskills, i know how to use correctly a lot of software like RECAP, REVIT, AUTOCAD, NAVISWORK,ROBOT, Twinmotion, Sketchup, Excel,.. . So i'm able to do render, but also technical drawing like structural drawing or execution drawing. I know also how read and write BIM convention / Charter so i'm able to assess a customers need for example.</p>
+					<p>About my softskills, i'm very implicate, i'm dynamic, a very fastlearner and an hardworker </p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
